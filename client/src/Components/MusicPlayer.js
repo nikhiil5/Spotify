@@ -18,7 +18,7 @@ const MusicPlayer = () => {
 
 
   const fetchSongs = async () => {
-    const response = await fetch('https://music-player-uz8j.onrender.com/songs');
+    const response = await fetch('https://spotify-2c6l.onrender.com/songs');
     const data = await response.json();
     
     setSongs(data);
@@ -126,7 +126,7 @@ const MusicPlayer = () => {
     
       if (num!==null && songs.length > 0) {
         const currentSong = songs[num].url; // Assuming the first song for now
-        const newAudio = new Audio(`https://music-player-uz8j.onrender.com/music${currentSong}`);
+        const newAudio = new Audio(`https://spotify-2c6l.onrender.com/music${currentSong}`);
         newAudio.volume = volume; // Set initial volume
         setAudio(newAudio);
       }
@@ -160,7 +160,7 @@ const MusicPlayer = () => {
     setIsPlaying(false);
     
     if(num%2===0){
-      const nw=Math.floor(Math.random() * 2)*2;
+      const nw=Math.floor(Math.random() * 5)*2;
       if(nw!==num){
         setNum(nw*2);
       }
@@ -169,7 +169,7 @@ const MusicPlayer = () => {
       }
       
     }else{
-      const nw=Math.floor(Math.random() * 2)*2 + 1;
+      const nw=Math.floor(Math.random() * 5)*2 + 1;
       if(nw!==num){
         setNum(nw*2);
       }
