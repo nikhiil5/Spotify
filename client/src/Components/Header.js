@@ -12,7 +12,7 @@ const Header = () => {
     return(
         <Navbar bg="dark" variant={"dark"} expand="lg" >
         <Container fluid>
-          <Navbar.Brand href="#">Music Player</Navbar.Brand>
+          <Navbar.Brand href="https://spotify-blond-omega.vercel.app/">MusicPlayer</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -20,8 +20,8 @@ const Header = () => {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link href="#action1">Home</Nav.Link>
-              <Nav.Link href="#action2">Music</Nav.Link>
+              <Nav.Link href="https://spotify-blond-omega.vercel.app/">Home</Nav.Link>
+              <Nav.Link href="#">Music</Nav.Link>
               <NavDropdown title="Top" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Music</NavDropdown.Item>
                 <NavDropdown.Item href="#action4">
@@ -29,11 +29,14 @@ const Header = () => {
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action5">
-                  Something else here
+                  Podcasts
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href="#" disabled>
-                About Us
+              <Nav.Link href="#" >
+                Log in 
+              </Nav.Link>
+              <Nav.Link href="#" >
+                Sign up
               </Nav.Link>
             </Nav>
             <Form className="d-flex">

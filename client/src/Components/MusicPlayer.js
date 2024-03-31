@@ -118,6 +118,7 @@ const MusicPlayer = () => {
     };
   
     if (isTestingComplete) {
+      setAverageSpeed(averageSpeed*8);
       number();
     }
   }, [isTestingComplete]);
@@ -160,18 +161,18 @@ const MusicPlayer = () => {
     setIsPlaying(false);
     
     if(num%2===0){
-      const nw=Math.floor(Math.random() * 5)*2;
+      const nw=Math.floor(Math.random() * 6)*2;
       if(nw!==num){
-        setNum(nw*2);
+        setNum(nw);
       }
       else{
         handleShuffle();
       }
       
     }else{
-      const nw=Math.floor(Math.random() * 5)*2 + 1;
+      const nw=Math.floor(Math.random() * 6)*2 + 1;
       if(nw!==num){
-        setNum(nw*2);
+        setNum(nw);
       }
       else{
         handleShuffle();
@@ -205,14 +206,14 @@ const MusicPlayer = () => {
           thresholdUnit="megabyte"
           threshold={50}
           imageUrl="https://www.sefram.com/images/products/photos/hi_res/7220.jpg"
-          downloadSize="1561257"
+          downloadSize="1741796"
           callbackFunctionOnNetworkDown={()=>{}}
           callbackFunctionOnNetworkTest={handleSpeedTest}
         />
         <div className="card-body mt-4">
           {isTestingComplete ? (
             averageSpeed !== null ? (
-              <span className="display-6">{averageSpeed} MB/s</span>
+              <span className="display-6">{averageSpeed} Mbps</span>
             ) : (
               <span className="display-6">Unable to calculate average speed.</span>
             )
