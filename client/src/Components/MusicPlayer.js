@@ -104,8 +104,10 @@ const MusicPlayer = () => {
 
   const handleVolumeChange = (e) => {
     const newVolume = parseFloat(e.target.value);
+    
     setVolume(newVolume);
     if (audio) {
+      
       audio.volume = newVolume;
     }
   };
@@ -113,7 +115,7 @@ const MusicPlayer = () => {
   useEffect(() => {
     const number = () => {
       if (averageSpeed !== null) {
-        setNum(averageSpeed > 10 ? 0 : 1);
+        setNum(averageSpeed > 20 ? 0 : 1);
       }
     };
   
@@ -228,7 +230,7 @@ const MusicPlayer = () => {
           </div>
       </div>
       <div className="player-container">
-      <div className='dis'>{averageSpeed===null? '': averageSpeed>10?'Music Playback in High Quality':'Music Playback in Low Quality'}</div>
+      <div className='dis'>{averageSpeed===null? '': averageSpeed>20?'Music Playback in High Quality':'Music Playback in Low Quality'}</div>
       <img src="https://i.pinimg.com/originals/b0/2b/e6/b02be617e153fdd852c8e2f839d99eca.jpg" className="album-art"/>
       <div className="song-info">
         <h3>{songs.length > 0 && num !==null ? songs[num].name.split('.')[0] : 'Loading...'}</h3>
@@ -242,11 +244,13 @@ const MusicPlayer = () => {
         <button onClick={handleRepeat}>Repeat</button>
       </div>
       <div className="volume-control">
+        <img className="volumelogo" src="https://t4.ftcdn.net/jpg/05/52/97/37/360_F_552973791_1xvqdmN0jC7lb3L7vEUZMdFVIYzKqRMo.jpg"/>
+        
         <input
           type="range"
           min="0"
           max="1"
-          step="0.01"
+          step="0.1"
           value={volume}
           onChange={handleVolumeChange}
         />
@@ -257,7 +261,10 @@ const MusicPlayer = () => {
           style={{ width: `${progress}%` }}
         ></div>
       </div>
-      <div className="timestamp">{timestamp}/{songDuration}</div>
+      <div className="timestamp">
+        <div className='timevalue1'>{timestamp}</div>
+        <div className='timevalue2'>{songDuration}</div>
+      </div>
       </div>
       
     </div>
