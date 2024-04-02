@@ -31,7 +31,7 @@ const MusicPlayer = () => {
 
   useEffect(() => {
     if (speeds.length === 5 && !isTestingComplete) {
-      // Calculate the average speed when 10 readings are obtained
+      
       const total = speeds.reduce((acc, curr) => acc + parseFloat(curr), 0);
       const average = total / speeds.length;
       setAverageSpeed(average.toFixed(2));
@@ -128,7 +128,7 @@ const MusicPlayer = () => {
   useEffect(()=>{
     
       if (num!==null && songs.length > 0) {
-        const currentSong = songs[num].url; // Assuming the first song for now
+        const currentSong = songs[num].url; 
         const newAudio = new Audio(`https://spotify-2c6l.onrender.com/music${currentSong}`);
         newAudio.volume = volume; // Set initial volume
         setAudio(newAudio);
