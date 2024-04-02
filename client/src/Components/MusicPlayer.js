@@ -115,7 +115,8 @@ const MusicPlayer = () => {
   useEffect(() => {
     const number = () => {
       if (averageSpeed !== null) {
-        setNum(averageSpeed > 20 ? 0 : 1);
+        
+        setNum(averageSpeed*8 > 20 ? 0 : 1);
       }
     };
   
